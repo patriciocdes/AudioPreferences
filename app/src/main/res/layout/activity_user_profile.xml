@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".view.UserProfileActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingBottom="16dp"
+        android:text="Cadastrar Perfil"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/nameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp"
+        android:text="Nome do Perfil"
+        android:textSize="16sp" />
+
+    <EditText
+        android:id="@+id/profileNameEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:hint="Digite o nome do perfil"
+        android:inputType="textPersonName"
+        android:padding="10dp"
+        android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/textBassLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Graves"
+        android:textSize="16sp"
+        android:paddingBottom="8dp"/>
+
+    <SeekBar
+        android:id="@+id/barBassLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="10"
+        android:min="-10"
+        android:progress="0"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/textMidLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Médios"
+        android:textSize="16sp"
+        android:paddingBottom="8dp"/>
+
+    <SeekBar
+        android:id="@+id/barMidLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="10"
+        android:min="-10"
+        android:progress="0"
+        android:layout_marginBottom="16dp"/>
+
+    <TextView
+        android:id="@+id/textTrebleLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Agudos"
+        android:textSize="16sp"
+        android:paddingBottom="8dp"/>
+
+    <SeekBar
+        android:id="@+id/barTrebleLevel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:max="10"
+        android:min="-10"
+        android:progress="0"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/saveProfileButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Salvar Perfil"
+        android:textSize="16sp" />
+
+    <Button
+        android:id="@+id/deleteProfileButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Excluir Perfil"
+        android:textSize="16sp" />
+
+</LinearLayout>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "759045287304",
+    "project_id": "pcs-audio-preferences",
+    "storage_bucket": "pcs-audio-preferences.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:759045287304:android:b1424ddda89d7766d51e3d",
+        "android_client_info": {
+          "package_name": "com.patriciocds.audiopreferences"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuLginltCm9QMrfcUDVO3Mx1XaByYgqP8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

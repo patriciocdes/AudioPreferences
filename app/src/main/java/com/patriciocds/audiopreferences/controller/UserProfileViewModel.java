@@ -6,9 +6,11 @@ import androidx.annotation.NonNull;
 import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.patriciocds.audiopreferences.dao.UserProfileDao;
 import com.patriciocds.audiopreferences.db.AppDatabase;
 import com.patriciocds.audiopreferences.model.UserProfile;
+import com.patriciocds.audiopreferences.remote.FirestoreRepository;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
@@ -21,6 +23,8 @@ public class UserProfileViewModel extends AndroidViewModel {
 
     private final ExecutorService executorService;
 
+    private FirestoreRepository firestoreRepository;
+
     public UserProfileViewModel(@NonNull Application application) {
         super(application);
 
@@ -30,12 +34,17 @@ public class UserProfileViewModel extends AndroidViewModel {
         fullUserProfiles = userProfileDao.getFullUserProfile();
 
         executorService = Executors.newSingleThreadExecutor();
+
+        firestoreRepository = new FirestoreRepository();
     }
 
     public void insertUserProfile(final UserProfile userProfile) {
         executorService.execute(() -> {
-            userProfileDao.insert(userProfile);
+            long id = userProfileDao.insert(userProfile);
             fullUserProfiles = userProfileDao.getFullUserProfile();
+
+            userProfile.setId(id);
+            firestoreRepository.saveUserProfile(userProfile, null, null);
         });
     }
 
